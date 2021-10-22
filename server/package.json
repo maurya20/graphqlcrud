@@ -1,0 +1,30 @@
+{
+  "name": "graphqlcrud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maurya20/graphqlcrud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maurya20/graphqlcrud/issues"
+  },
+  "homepage": "https://github.com/maurya20/graphqlcrud#readme",
+  "dependencies": {
+    "apollo-server-express": "^3.4.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}

@@ -1,8 +1,0 @@
-{
-    "name": "graphqlcrud",
-    "dependencies": {
-        "apollo-server": "^2.25.2",
-        "apollo-server-express": "^2.25.2",
-        "graphql": "^15.6.1"
-    }
-}
