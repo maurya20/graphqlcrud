@@ -1,8 +1,8 @@
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import mongoose from "mongoose";
-import typeDefs from "./typeDefs.js";
-import resolvers from "./resolvers.js";
+import typeDefs from "./graphql/typeDefs.js";
+import resolvers from "./graphql/resolvers.js";
 
 //Database Connection
 const URL = "mongodb://localhost:27017/graphqlcrud";
@@ -15,9 +15,8 @@ mongoose.connect(
   },
   () => console.log("DB CONNECTED")
 );
-
+const app = express();
 const startServer = async () => {
-  const app = express();
   const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
