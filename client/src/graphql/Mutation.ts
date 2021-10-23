@@ -1,16 +1,30 @@
 import { gql } from "@apollo/client";
-export const CREATE_POST = gql`
-  mutation createPost($title: String, $description: String) {
-    createPost(post: { title: $title, description: $description }) {
+export const CREATE_STUDENT = gql`
+  mutation createStudent(
+    $name: String
+    $rollNumber: Int
+    $subjects: [String]
+    $status: Boolean
+  ) {
+    createStudent(
+      student: {
+        name: $name
+        rollNumber: $rollNumber
+        subjects: $subjects
+        status: $status
+      }
+    ) {
       id
-      title
-      description
+      name
+      rollNumber
+      subjects
+      status
     }
   }
 `;
 
-export const DELETE_POST = gql`
-  mutation deletePost($id: String) {
-    deletePost(id: $id)
+export const DELETE_STUDENT = gql`
+  mutation deleteStudent($id: String) {
+    deleteStudent(id: $id)
   }
 `;

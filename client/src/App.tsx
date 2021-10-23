@@ -1,31 +1,8 @@
-import { useMutation, useQuery } from "@apollo/client";
-import { CREATE_POST, DELETE_POST } from "./graphql/Mutation";
-import { getALL } from "./graphql/Query";
-import { useState } from "react";
-import { Home } from "./components";
+import { Appbar, Home } from "./components";
 function App() {
-  const { loading, error, data } = useQuery(getALL);
-
-  if (loading) return <h3>Loading</h3>;
-  if (error) return <h3>Error</h3>;
-  // const addPost = () => {
-  //   createPost({
-  //     variables: {
-  //       title: title,
-  //       description: description,
-  //     },
-  //   });
-  // };
-  // const removePost = (id: string) => {
-  //   deletePost({
-  //     variables: {
-  //       id: id,
-  //     },
-  //   });
-  // };
-
   return (
     <div className="App">
+      <Appbar />
       <Home />
       {/* {data.getAll.map((data: any) => (
         <>
