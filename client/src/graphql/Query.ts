@@ -3,8 +3,10 @@ export const getALL = gql`
   {
     getAll {
       id
-      title
-      description
+      name
+      rollNumber
+      subjects
+      status
     }
   }
 `;
