@@ -26,10 +26,10 @@ export const Edit = (props: any) => {
     updateStudent({
       variables: {
         id: student.id,
-        name: name,
-        rollNumber: rollNumber,
-        subjects: subjArray,
-        status: status,
+        name: name || student.name,
+        rollNumber: rollNumber || student.rollNumber,
+        subjects: subjArray || student.subjects,
+        status: status || student.status,
       },
     });
     alert("Edited Sucessfully.");
