@@ -10,6 +10,7 @@ import {
 import { useMutation } from "@apollo/client";
 import { UPDATE_STUDENT } from "../graphql/Mutation";
 import React from "react";
+import { Message } from ".";
 //interface Props {}
 
 export const Edit = (props: any) => {
@@ -20,7 +21,7 @@ export const Edit = (props: any) => {
   const [status, setStatus] = React.useState<boolean | string>(true);
   const [updateStudent, err] = useMutation(UPDATE_STUDENT);
   const subjArray = subjects.split(",");
-  console.log("edit>>>>>>", student);
+  const [msg, setMsg] = React.useState("");
   const editStudent = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     updateStudent({
@@ -32,10 +33,14 @@ export const Edit = (props: any) => {
         status: status || student.status,
       },
     });
-    alert("Edited Sucessfully.");
+    setMsg("Updated successfully");
+    setTimeout(() => {
+      setMsg("");
+    }, 3000);
   };
   return (
     <Box sx={{ margin: "3rem" }}>
+      {msg && <Message msg={msg} />}
       <h5 id="unstyled-modal-title">Edit {student.name}</h5>
 
       <form onSubmit={(e) => editStudent(e)}>
