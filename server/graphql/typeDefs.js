@@ -14,6 +14,7 @@ const typeDefs = gql`
     getAll: [Student]
   }
   input StudentInput {
+    id: String
     name: String
     rollNumber: Int
     subjects: [String]

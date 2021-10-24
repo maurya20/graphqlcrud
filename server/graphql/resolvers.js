@@ -22,8 +22,8 @@ const resolvers = {
       return student;
     },
     updateStudent: async (parent, args, context, info) => {
-      const { id } = args;
-      const { name, rollNumber, subjects, status } = args.student;
+      //const { id } = args;
+      const { id, name, rollNumber, subjects, status } = args.student;
       const student = await Student.findByIdAndUpdate(
         id,
         { name, rollNumber, subjects, status },

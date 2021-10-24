@@ -24,7 +24,7 @@ export const CREATE_STUDENT = gql`
 `;
 export const UPDATE_STUDENT = gql`
   mutation updateStudent(
-    $id: ID
+    $id: String
     $name: String
     $rollNumber: Int
     $subjects: [String]

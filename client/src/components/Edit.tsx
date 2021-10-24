@@ -14,14 +14,13 @@ import React from "react";
 
 export const Edit = (props: any) => {
   const student = props.location.state;
-
   const [name, setName] = React.useState<string>("");
   const [rollNumber, setRollnumber] = React.useState<number>(0);
   const [subjects, setSubjects] = React.useState<string>("");
   const [status, setStatus] = React.useState<boolean | string>(true);
   const [updateStudent, err] = useMutation(UPDATE_STUDENT);
   const subjArray = subjects.split(",");
-  console.log("edit>>>>>>", err);
+  console.log("edit>>>>>>", student);
   const editStudent = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     updateStudent({
