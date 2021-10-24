@@ -22,6 +22,31 @@ export const CREATE_STUDENT = gql`
     }
   }
 `;
+export const UPDATE_STUDENT = gql`
+  mutation updateStudent(
+    $id: ID
+    $name: String
+    $rollNumber: Int
+    $subjects: [String]
+    $status: Boolean
+  ) {
+    updateStudent(
+      student: {
+        id: $id
+        name: $name
+        rollNumber: $rollNumber
+        subjects: $subjects
+        status: $status
+      }
+    ) {
+      id
+      name
+      rollNumber
+      subjects
+      status
+    }
+  }
+`;
 
 export const DELETE_STUDENT = gql`
   mutation deleteStudent($id: String) {

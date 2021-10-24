@@ -1,33 +1,16 @@
-import { Appbar, Home } from "./components";
+import { Switch, Route } from "react-router-dom";
+import { Appbar, Home, Edit } from "./components";
+
 function App() {
   return (
     <div className="App">
       <Appbar />
-      <Home />
-      {/* {data.getAll.map((data: any) => (
-        <>
-          <p key={data.title}>
-            {data.title}----{data.description}
-          </p>
-          <button onClick={() => removePost(data.id)}> Delete it </button>
-        </>
-      ))}
-      <br />
-      Title---{" "}
-      <input
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setTitle(e.target.value)
-        }
-      />
-      <br />
-      Description ---
-      <input
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setDescription(e.target.value)
-        }
-      />
-      <br />
-      <button onClick={() => addPost()}>Add Post</button> */}
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/edit" render={(props) => <Edit {...props} />} />
+      </Switch>
     </div>
   );
 }

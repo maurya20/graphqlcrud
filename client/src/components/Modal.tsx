@@ -66,7 +66,7 @@ export const Modal = () => {
         status: status,
       },
     });
-    alert("chalaaaaaa");
+    alert("New student added.");
   };
   return (
     <div>

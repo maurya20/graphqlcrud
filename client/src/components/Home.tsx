@@ -5,7 +5,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useMutation } from "@apollo/client";
 import { DELETE_STUDENT } from "../graphql/Mutation";
 import React from "react";
-
+import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
+import EditIcon from "@mui/icons-material/Edit";
 interface Props {}
 
 export const Home = (props: Props) => {
@@ -52,7 +54,23 @@ export const Home = (props: Props) => {
                 >
                   <DeleteIcon color="error" />
                 </span>
-                <Typography variant="h4">Name:{value.name}</Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Typography variant="h4">Name:{value.name}</Typography>
+                  <Link
+                    to={{
+                      pathname: `/edit`,
+                      state: value,
+                    }}
+                    title="Edit this student"
+                  >
+                    <EditIcon />
+                  </Link>
+                </Box>
                 <Typography variant="h6">
                   Roll Number:{value.rollNumber}
                 </Typography>
