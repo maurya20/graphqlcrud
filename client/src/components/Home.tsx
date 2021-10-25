@@ -60,7 +60,17 @@ export const Home = (props: Props) => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Typography variant="h4">Name:{value.name}</Typography>
+                  <Typography variant="h5">
+                    Name:
+                    {
+                      <Link
+                        to={`/detail/${value.id}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        {value.name}
+                      </Link>
+                    }
+                  </Typography>
                   <Link
                     to={{
                       pathname: `/edit`,

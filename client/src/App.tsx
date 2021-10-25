@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Appbar, Home, Edit } from "./components";
+import { Appbar, Home, Edit, Detail } from "./components";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/edit" render={(props) => <Edit {...props} />} />
+        <Route path="/detail/:id" render={(props) => <Detail {...props} />} />
       </Switch>
     </div>
   );
