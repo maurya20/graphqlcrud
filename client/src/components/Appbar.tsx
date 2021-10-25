@@ -7,6 +7,7 @@ interface Props {}
 export const Appbar = (props: Props) => {
   return (
     <Box
+      data-testid="appbar"
       sx={{
         backgroundColor: "ButtonFace",
         display: "flex",
