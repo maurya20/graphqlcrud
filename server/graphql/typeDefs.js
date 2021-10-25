@@ -12,6 +12,7 @@ const typeDefs = gql`
   type Query {
     hello: String
     getAll: [Student]
+    getOne(id: ID): Student
   }
   input StudentInput {
     id: String

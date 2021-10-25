@@ -9,6 +9,9 @@ const resolvers = {
     getAll: async () => {
       return await Student.find();
     },
+    getOne: async (parent, args, context, info) => {
+      return await Student.findById(args.id);
+    },
   },
   Mutation: {
     createStudent: async (parent, args, context, info) => {
