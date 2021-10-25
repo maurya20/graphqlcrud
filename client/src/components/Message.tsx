@@ -18,6 +18,7 @@ export const Message = (props: Props) => {
         borderRadius: "15px",
         height: "40px",
         textAlign: "center",
+        zIndex: 1000,
       }}
     >
       <Typography>{props.msg}</Typography>

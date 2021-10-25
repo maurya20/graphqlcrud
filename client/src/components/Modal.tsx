@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { useMutation } from "@apollo/client";
 import { CREATE_STUDENT } from "../graphql/Mutation";
+import { Message } from ".";
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
   z-index: 1300;
@@ -55,7 +56,7 @@ export const Modal = () => {
   const [status, setStatus] = React.useState<boolean | string>(true);
   const [createStudent] = useMutation(CREATE_STUDENT);
   const subjArray = subjects.split(",");
-
+  const [msg, setMsg] = React.useState("");
   const addStudent = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     createStudent({
@@ -66,10 +67,14 @@ export const Modal = () => {
         status: status,
       },
     });
-    alert("New student added.");
+    setMsg("A new student added successfully");
+    setTimeout(() => {
+      setMsg("");
+    }, 3000);
   };
   return (
     <div>
+      {msg && <Message msg={msg} />}
       <span role="button" onClick={handleOpen} title="Edit this student.">
         <AddIcon />
       </span>

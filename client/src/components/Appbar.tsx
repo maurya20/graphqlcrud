@@ -12,12 +12,7 @@ export const Appbar = (props: Props) => {
         display: "flex",
       }}
     >
-      <img
-        src="https://seeklogo.com/images/R/risd-rhode-island-school-of-design-logo-C01C52225E-seeklogo.com.png"
-        alt="logo"
-        height={60}
-        width={90}
-      />
+      <strong style={{ fontSize: "3em" }}>RISDB</strong>
       <Typography variant="h3" marginLeft={5}>
         Rural India Student Database
       </Typography>

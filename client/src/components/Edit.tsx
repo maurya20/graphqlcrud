@@ -19,7 +19,7 @@ export const Edit = (props: any) => {
   const [rollNumber, setRollnumber] = React.useState<number>(0);
   const [subjects, setSubjects] = React.useState<string>("");
   const [status, setStatus] = React.useState<boolean | string>(true);
-  const [updateStudent, err] = useMutation(UPDATE_STUDENT);
+  const [updateStudent] = useMutation(UPDATE_STUDENT);
   const subjArray = subjects.split(",");
   const [msg, setMsg] = React.useState("");
   const editStudent = (e: React.FormEvent<HTMLFormElement>) => {
@@ -38,6 +38,7 @@ export const Edit = (props: any) => {
       setMsg("");
     }, 3000);
   };
+
   return (
     <Box sx={{ margin: "3rem" }}>
       {msg && <Message msg={msg} />}
