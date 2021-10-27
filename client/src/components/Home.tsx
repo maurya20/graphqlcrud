@@ -7,11 +7,24 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { Box } from "@mui/system";
 import { DELETE_STUDENT } from "../graphql/Mutation";
-import { getALL } from "../graphql/Query";
+//import { getALL } from "../graphql/Query";
 import { Message } from ".";
+import { gql } from "@apollo/client";
 
 export const Home = () => {
+  const customQuery = { name: "name", subjects: "subjects", status: "status" };
+  const getALL = gql`
+    {
+      getAll {
+      ${customQuery.name}
+      ${customQuery.subjects}
+      ${customQuery.status}
+      }
+    }
+  `;
   const { loading, error, data, refetch } = useQuery(getALL);
+  console.log("homecustom>>", data);
+
   const [deleteStudent] = useMutation(DELETE_STUDENT);
   const [msg, setMsg] = React.useState("");
   //const [ignore, update] = React.useState(true);

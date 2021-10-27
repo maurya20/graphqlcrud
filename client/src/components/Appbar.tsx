@@ -2,6 +2,7 @@ import { Box } from "@mui/system";
 import { Fab, Typography } from "@mui/material";
 import { Modal } from ".";
 import "../app.scss";
+
 export const Appbar = () => {
   return (
     <Box
@@ -11,13 +12,19 @@ export const Appbar = () => {
         display: "flex",
       }}
     >
-      <strong style={{ fontSize: "3em" }}>RISDB</strong>
+      <strong style={{ fontSize: "3em" }} role="button">
+        RISDB
+      </strong>
       <Typography variant="h3" marginLeft={5}>
         Rural India Student Database
       </Typography>
       <Box
         display="flex"
-        sx={{ justifyContent: "flex-end", alignItems: "flex-end", flexGrow: 1 }}
+        sx={{
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
+          flexGrow: 1,
+        }}
       >
         <Fab color="secondary" aria-label="add">
           <Modal />
