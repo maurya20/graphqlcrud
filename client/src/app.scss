@@ -1,0 +1,11 @@
+$appBg: rgb(228, 235, 228);
+$appPadding: 1px;
+$appBarBg: rgb(81, 69, 149);
+.App {
+  background-color: $appBg;
+  padding: $appPadding;
+}
+.Appbar {
+  background-color: $appBarBg;
+  color: azure;
+}

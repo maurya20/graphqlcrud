@@ -1,14 +1,19 @@
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import { Box } from "@mui/system";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
+import { match } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { getOne } from "../graphql/Query";
-import { Box } from "@mui/system";
+import { IRouteProps } from "./interface";
 import { Message } from ".";
-export const Detail = (props: any) => {
-  const id = props.match.params.id;
+
+export const Detail = ({ match }: { match: match<IRouteProps> }) => {
+  const id = match.params.id;
   const { loading, error, data } = useQuery(getOne, {
     variables: { id: id },
   });

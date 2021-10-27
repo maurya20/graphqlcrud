@@ -1,17 +1,16 @@
-import { useQuery } from "@apollo/client";
-import { getALL } from "../graphql/Query";
-import { Grid, Paper, Typography } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { useMutation } from "@apollo/client";
-import { DELETE_STUDENT } from "../graphql/Mutation";
 import React from "react";
-import { Box } from "@mui/system";
-import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { Grid, Paper, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { Box } from "@mui/system";
+import { DELETE_STUDENT } from "../graphql/Mutation";
+import { getALL } from "../graphql/Query";
 import { Message } from ".";
-interface Props {}
 
-export const Home = (props: Props) => {
+export const Home = () => {
   const { loading, error, data, refetch } = useQuery(getALL);
   const [deleteStudent] = useMutation(DELETE_STUDENT);
   const [msg, setMsg] = React.useState("");

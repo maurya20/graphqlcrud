@@ -1,15 +1,13 @@
-import { Fab, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-
+import { Fab, Typography } from "@mui/material";
 import { Modal } from ".";
-interface Props {}
-
-export const Appbar = (props: Props) => {
+import "../app.scss";
+export const Appbar = () => {
   return (
     <Box
+      className="Appbar"
       data-testid="appbar"
       sx={{
-        backgroundColor: "ButtonFace",
         display: "flex",
       }}
     >
